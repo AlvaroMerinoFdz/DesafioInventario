@@ -50,5 +50,5 @@ create table 'monitor'(
 create table 'impresora'(
     'id' varchar(10) not null,
     'marca' varchar(50) not null,
-    'fabricacion' int(5) not null
+    'fabricacion' int(4) not null
 )
