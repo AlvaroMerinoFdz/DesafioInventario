@@ -15,4 +15,10 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this,RegistrarActivity::class.java)
         startActivity(intent)
     }
+
+    fun iniciar_sesion(view:View){
+        val intent = Intent(this, PrincipalActivity::class.java)
+        intent.putExtra("Rol",enums.Rol.JEFE_DEPARTAMENTO)
+        startActivity(intent)
+    }
 }

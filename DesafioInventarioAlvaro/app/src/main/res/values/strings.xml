@@ -9,4 +9,9 @@
     <string name="SignUpCorrecto">Registered Successfully</string>
     <string name="SignUpFail">Register failed</string>
     <string name="CampoVacio">Fill in the fields</string>
+    <string name="ListarAulas">List Classrooms</string>
+    <string name="GestionarAulas">Manage Classrooms</string>
+    <string name="GestionarProfesores">Manage Teachers</string>
+    <string name="cerrarSesion">Log Out</string>
+    <!-- TODO: Remove or change this placeholder text -->
 </resources>

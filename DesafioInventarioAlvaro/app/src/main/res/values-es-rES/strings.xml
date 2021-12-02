@@ -10,4 +10,8 @@
     <string name="SignUpCorrecto">Registrado Correctamente...</string>
     <string name="SignUpFail">Fallo al registrar</string>
     <string name="CampoVacio">Rellene los campos</string>
+    <string name="ListarAulas">Listar Aulas</string>
+    <string name="GestionarAulas">Gestionar Aulas</string>
+    <string name="GestionarProfesores">Gestionar Profesores</string>
+    <string name="cerrarSesion">Cerrar Sesión</string>
 </resources>
