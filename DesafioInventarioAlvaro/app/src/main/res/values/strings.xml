@@ -13,5 +13,6 @@
     <string name="GestionarAulas">Manage Classrooms</string>
     <string name="GestionarProfesores">Manage Teachers</string>
     <string name="cerrarSesion">Log Out</string>
+    <string name="Nombre">Name</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

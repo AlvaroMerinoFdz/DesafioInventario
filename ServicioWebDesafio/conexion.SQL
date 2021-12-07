@@ -1,54 +1,56 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 07-12-2021 a las 11:33:51
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.0.13
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 
--- Base de datos: "DesafioInventario"
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
---Estructura de la tabla 'usuarios'
+--
+-- Base de datos: `inventario`
+--
 
-create table 'usuarios'(
-    'login' varchar(10) not null,
-    'pwd' varchar(10) not null,
-    'rol' int(2) not null
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- --------------------------------------------------------
 
--- Índices de la table usuarios
-alter table 'usuarios'(
-    ADD PRIMARY KEY ('login')
-)
+--
+-- Estructura de tabla para la tabla `usuario`
+--
 
+CREATE TABLE `usuario` (
+  `login` varchar(50) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `pwd` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Estructura de la tabla dispositivos
-create table 'dispositivos'(
-    'id' varchar(10) not null,
-    'tipo' int(2) not null
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+--
+-- Volcado de datos para la tabla `usuario`
+--
 
--- Índice de la tabla dispositivo
-alter table 'dispositivos'(
-)
+INSERT INTO `usuario` (`login`, `nombre`, `pwd`) VALUES
+('alvaro', 'alvaro', 'alvaro');
 
--- Estrcutura de la tabla Ordenador
-create table 'ordenador'(
-    'id' varchar(10) not null,
-    'cpu' varchar(50) not null,
-    'ram' int(3) not null,
-    'disco' int(5) not null
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+--
+-- Índices para tablas volcadas
+--
 
---Tenemos que añadir la constraint de ordenador.id == dispositivos.id
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`login`);
+COMMIT;
 
-
-create table 'monitor'(
-    'id' varchar(10) not null,
-    'marca' varchar(50) not null,
-    'pulgadas' int(3) not null
-)
-
-create table 'impresora'(
-    'id' varchar(10) not null,
-    'marca' varchar(50) not null,
-    'fabricacion' int(4) not null
-)
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
