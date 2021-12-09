@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-12-2021 a las 11:33:51
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.0.13
+-- Tiempo de generación: 09-12-2021 a las 13:54:11
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,15 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `usuario` (
   `login` varchar(50) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `pwd` varchar(50) NOT NULL
+  `pwd` varchar(50) NOT NULL,
+  `rol` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`login`, `nombre`, `pwd`) VALUES
-('alvaro', 'alvaro', 'alvaro');
+INSERT INTO `usuario` (`login`, `nombre`, `pwd`, `rol`) VALUES
+('alvaro', 'alvaro', 'alvaro', 0),
+('fernando', 'fernando', 'fernando', 1);
 
 --
 -- Índices para tablas volcadas

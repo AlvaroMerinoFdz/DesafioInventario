@@ -25,13 +25,13 @@ class Conexion:
     def cerrarConexion(self):
         self._conexion.close()
 
-    def insertarUsuario(self,login,nombre,passwd):
+    def insertarUsuario(self,login,nombre,passwd,rol):
         """Insertamos un usuario en la tabla usuarios"""
         try:
             self.conectar()
             cursor = self._conexion.cursor()
-            consulta = "INSERT INTO usuario(login, nombre, pwd) VALUES (%s, %s, %s, %s)"
-            cursor.execute(consulta, (login, nombre, passwd))
+            consulta = "INSERT INTO usuario(login, nombre, pwd, rol) VALUES (%s, %s, %s, %s)"
+            cursor.execute(consulta, (login, nombre, passwd,rol))
             self._conexion.commit()
             self.cerrarConexion()
             return 0

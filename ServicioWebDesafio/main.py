@@ -10,7 +10,7 @@ api = Api(app)
 
 @app.route('/')
 def hello():
-    return 'Bienvenido a la API de Alvaro Merino, realizada para el Desafío Inventario'
+    return 'Bienvenido a la API de Álvaro Merino, realizada para el Desafío Inventario'
 
 @app.route("/usuarios", methods=['GET']) #aquí especificamos la ruta para el endpoint.
 def getPersonas(): #aquí declaramos una función que se llamará cuando se realice una request a esa url
@@ -35,6 +35,29 @@ def getPersona(id):
         resp = jsonify(respuesta)
         resp.status_code = 400    
     return resp
+
+@app.route("/registrar", methods=["POST"])
+def addPersona():
+    data = request.json
+    
+    print(data) # Desde android nos llega en formato diccionario
+    print(data['login'])
+    print(data['nombre'])
+    print(data['pwd'])
+    print(data['rol'])
+    
+    
+    if(conex.insertarUsuario(data['login'],data['nombre'],data['pwd'],str(data['rol'])) == 0):
+        respuesta = {'message' : 'OK'}
+        resp = jsonify(respuesta)
+        resp.status_code = 200
+    else:
+        respuesta = {'message' : 'Login duplicado.'}
+        resp = jsonify(respuesta)
+        resp.status_code = 400
+    print(resp)
+    return resp
+
 
 if __name__ == '__main__':
      #app.run(debug=True)

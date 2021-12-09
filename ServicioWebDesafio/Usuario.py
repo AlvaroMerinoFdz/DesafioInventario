@@ -5,10 +5,11 @@ class UsuarioEncoder(json.JSONEncoder):
         return obj.__dict__
 
 class Usuario(object):
-    def __init__(self, login,nombre, pwd) -> None:
+    def __init__(self, login,nombre, pwd, rol) -> None:
         self.Login = login
         self.Nombre = nombre
         self.Pwd = pwd
+        self.Rol = rol
         
 
     def __str__(self):
